@@ -1,5 +1,6 @@
 import tasks from "./foreach.js";
 import fruits from "./map.js";
+import shopper from "./mapreloaded.js";
 
 //FOREACH
 
@@ -13,10 +14,34 @@ tasks.forEach((taskp, index) => {
          </li>`;
          //console.log(Object.keys(taskp))
 });
+
+//MAP
+
 const map = document.getElementById('map');
 
 const list = fruits.map(index => {
-    return ` <li> ${index.product} - ${index.price} </li>`;
+    return ` <li> ${index.product} - $${index.price} </li>`;
 });
 console.log(list);
+map.innerHTML = list.join('')
+
+//MAPOBJET
+const mapOpjet = document.getElementById('mapObjet');
+const taxClothes = shopper.map(items => {
+    items.tax = 0.19;
+    return {
+        ...items,
+        tax:.19
+    };
+})
+console.log('taxClothes', taxClothes)
+
+const taxItem = taxClothes.map(item => {
+    return ` <li> product: ${item.product} - $${item.price} - tax: ${item.tax} </li>`;
+})
+console.log('taxItem', taxItem)
+mapOpjet.innerHTML = taxItem.join('')
+
+
+
 
