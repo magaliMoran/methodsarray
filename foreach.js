@@ -13,5 +13,11 @@ const tasks = [
     { task: 'Contactar con los responsables de la contratación para hablar del nuevo puesto', assignment:'manager', done: true },
     { task: 'Reunión con el equipo de ingeniería', assignment:'manager', done: false }
 ];
-export default tasks
+export default tasks 
+
+
+// {
+//     let fruta = index.price*25
+//     console.log(fruta)
+// })
 

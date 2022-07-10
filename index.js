@@ -1,4 +1,5 @@
 import tasks from "./foreach.js";
+import fruits from "./map.js";
 
 //FOREACH
 
@@ -12,5 +13,10 @@ tasks.forEach((taskp, index) => {
          </li>`;
          //console.log(Object.keys(taskp))
 });
+const map = document.getElementById('map');
 
+const list = fruits.map(index => {
+    return ` <li> ${index.product} - ${index.price} </li>`;
+});
+console.log(list);
 
