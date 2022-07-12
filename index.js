@@ -1,6 +1,7 @@
 import tasks from "./foreach.js";
 import fruits from "./map.js";
 import shopper from "./mapreloaded.js";
+import staff from "./filter.js";
 
 //FOREACH
 
@@ -42,6 +43,12 @@ const taxItem = taxClothes.map(item => {
 console.log('taxItem', taxItem)
 mapOpjet.innerHTML = taxItem.join('')
 
+//FILTER
+const searchStaff= (query) => {
+    return staff.filter(people => {
+        return people.name.includes(query) || people.lastName.includes(query) || people.age.includes(query) 
+    })
+}
+console.log('filter', searchStaff(40));
 
-
-
+//console.log();
