@@ -2,6 +2,7 @@ import tasks from "./foreach.js";
 import fruits from "./map.js";
 import shopper from "./mapreloaded.js";
 import staff from "./filter.js";
+import solution from "./reduce.js";
 
 //FOREACH
 
@@ -29,10 +30,10 @@ map.innerHTML = list.join('')
 //MAPOBJET
 const mapOpjet = document.getElementById('mapObjet');
 const taxClothes = shopper.map(items => {
-    items.tax = 0.19;
+    
     return {
         ...items,
-        tax:.19
+        tax:(items.price*3)
     };
 })
 console.log('taxClothes', taxClothes)
@@ -51,4 +52,16 @@ const searchStaff= (query) => {
 }
 console.log('filter', searchStaff(40));
 
+//REDUCE
+
+const located = fruits.map(item => item.located)
+.reduce((obj, item) => {
+    if (!obj [item]) {
+        obj[item] = 1;
+    }else {
+        obj[item] = obj[item] + 1;
+    }
+    return obj;
+ }, {})
+console.log(located);
 //console.log();

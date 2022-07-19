@@ -2,7 +2,7 @@ const staff = [
     {
         name: 'Angy',
         lastName: 'Duran',
-        age: '39',
+        age: '38',
     },
     {
         name: 'Raul',
