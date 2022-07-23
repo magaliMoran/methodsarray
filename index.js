@@ -2,7 +2,7 @@ import tasks from "./foreach.js";
 import fruits from "./map.js";
 import shopper from "./mapreloaded.js";
 import staff from "./filter.js";
-import solution from "./reduce.js";
+import numbers from "./reduce.js";
 
 //FOREACH
 
@@ -59,9 +59,36 @@ const located = fruits.map(item => item.located)
     if (!obj [item]) {
         obj[item] = 1;
     }else {
-        obj[item] = obj[item] + 1;
+        obj[item] = obj[item] += 1;
     }
     return obj;
  }, {})
-console.log(located);
+console.log('reduce', located);
 //console.log();
+
+//tener la lista del array
+//iterar el array con reduce
+//generar un objeto donde definan los rangos 
+// generar la indicaciones donde se condicionen los items en los rangos
+// indicar que devuelva el objeto con los rangos
+const range=numbers.reduce((obj,item) => {
+    if (item<=20) obj ['1-20'] += 1;
+    else if (item<=40) obj ['21-40'] ++;
+    else if (item<=60) obj ['41-60'] += 1;
+    else if (item<=80) obj ['61-80'] += 1;
+    else  obj ['81-100'] += 1;
+    return obj
+}, {
+    '1-20':0,
+    '21-40':0,
+    '41-60':0,
+    '61-80':0,
+    '81-100':0,
+});
+console.log(range)
+
+   function countPositivesSumNegatives(input) {
+    //metodo identifique positivos y negativos conidcional
+    //metodo que solo cuente los elementos del array y otro que haga la suma de negativos
+    //devuelva un arreglo redusca a 2 elemetos el array
+  }
